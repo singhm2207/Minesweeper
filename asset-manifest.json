@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.f1178eb4.chunk.css",
-    "main.js": "/static/js/main.ab085940.chunk.js",
-    "main.js.map": "/static/js/main.ab085940.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.c056d1e7.js",
-    "runtime-main.js.map": "/static/js/runtime-main.c056d1e7.js.map",
-    "static/js/2.88bf253d.chunk.js": "/static/js/2.88bf253d.chunk.js",
-    "static/js/2.88bf253d.chunk.js.map": "/static/js/2.88bf253d.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.bf8d020b72c33ef9c0a52081b8327772.js": "/precache-manifest.bf8d020b72c33ef9c0a52081b8327772.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.f1178eb4.chunk.css.map": "/static/css/main.f1178eb4.chunk.css.map",
-    "static/js/2.88bf253d.chunk.js.LICENSE.txt": "/static/js/2.88bf253d.chunk.js.LICENSE.txt"
+    "main.css": "/Minesweeper/static/css/main.f1178eb4.chunk.css",
+    "main.js": "/Minesweeper/static/js/main.ab085940.chunk.js",
+    "main.js.map": "/Minesweeper/static/js/main.ab085940.chunk.js.map",
+    "runtime-main.js": "/Minesweeper/static/js/runtime-main.e9fd0c09.js",
+    "runtime-main.js.map": "/Minesweeper/static/js/runtime-main.e9fd0c09.js.map",
+    "static/js/2.88bf253d.chunk.js": "/Minesweeper/static/js/2.88bf253d.chunk.js",
+    "static/js/2.88bf253d.chunk.js.map": "/Minesweeper/static/js/2.88bf253d.chunk.js.map",
+    "index.html": "/Minesweeper/index.html",
+    "precache-manifest.7d76b20adf968705d9e773a08151b2dc.js": "/Minesweeper/precache-manifest.7d76b20adf968705d9e773a08151b2dc.js",
+    "service-worker.js": "/Minesweeper/service-worker.js",
+    "static/css/main.f1178eb4.chunk.css.map": "/Minesweeper/static/css/main.f1178eb4.chunk.css.map",
+    "static/js/2.88bf253d.chunk.js.LICENSE.txt": "/Minesweeper/static/js/2.88bf253d.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.c056d1e7.js",
+    "static/js/runtime-main.e9fd0c09.js",
     "static/js/2.88bf253d.chunk.js",
     "static/css/main.f1178eb4.chunk.css",
     "static/js/main.ab085940.chunk.js"
