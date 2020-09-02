@@ -39,7 +39,7 @@ function App() {
       return { ...boardState, openCells: prev.openCells + 1, status: 'running' };
     });
   });
-  const reset = useCallback(() => {
+  const reset = () => {
     //reset to initial state and change game staus back to waiting.
     setBoardState({
       ...boardState,
@@ -50,20 +50,20 @@ function App() {
       mines: 10,
       openCells: 0
     });
-  },[setBoardState]);
+  };
 
   //changes game status to ended
-  const endGame = useCallback(() => {
+  const endGame = () => {
     setBoardState({
       ...boardState,
       status: "ended"
     });
-  }, [boardState]);
+  };
 
   //keep tracks of number of flags opened and updates depending on passed argument.
-  const changeFlagAmount = useCallback(amount => {
+  const changeFlagAmount = amount => {
     setBoardState({ ...boardState, flags: boardState.flags + amount});
-  }, [boardState]);
+  };
   
   return (
     <div className="minesweeper">
