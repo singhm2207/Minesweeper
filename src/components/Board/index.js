@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState } from 'react';
 import Row from '../Row';
 export const Board = (props) => {
     //Creates empty board

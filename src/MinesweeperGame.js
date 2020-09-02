@@ -17,23 +17,15 @@ function App() {
         status: "winner"
       })
     }
-  }, [boardState]);
+  }, [boardState.openCells]);
 
   useEffect(() => {
     if(boardState.status === 'running'){
       checkForWinner();
     }
-  }, [boardState, checkForWinner]);
+  }, [boardState.status, checkForWinner]);
 
   const handleCellClick = useCallback(() => {
-    //if open cells are 0 and game has not started, upadate the game status
-    if(boardState.openCells === 0 && boardState.status !== 'running'){
-      setBoardState({
-        ...boardState,
-        status: 'running'
-      }
-      )
-    }
     //increment open cells count by one everytime this function is called.
     setBoardState(prev => {
       return { ...boardState, openCells: prev.openCells + 1, status: 'running' };
