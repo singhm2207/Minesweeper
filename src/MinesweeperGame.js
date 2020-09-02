@@ -24,8 +24,9 @@ function App() {
       checkForWinner();
     }
   }, [boardState, checkForWinner]);
-  
+
   const handleCellClick = useCallback(() => {
+    //if open cells are 0 and game has not started, upadate the game status
     if(boardState.openCells === 0 && boardState.status !== 'running'){
       setBoardState({
         ...boardState,
@@ -33,11 +34,13 @@ function App() {
       }
       )
     }
+    //increment open cells count by one everytime this function is called.
     setBoardState(prev => {
       return { ...boardState, openCells: prev.openCells + 1, status: 'running' };
     });
   });
   const reset = useCallback(() => {
+    //reset to initial state and change game staus back to waiting.
     setBoardState({
       ...boardState,
       status: 'waiting', //waiting, running, ended
@@ -49,6 +52,7 @@ function App() {
     });
   },[setBoardState]);
 
+  //changes game status to ended
   const endGame = useCallback(() => {
     setBoardState({
       ...boardState,
@@ -56,6 +60,7 @@ function App() {
     });
   }, [boardState]);
 
+  //keep tracks of number of flags opened and updates depending on passed argument.
   const changeFlagAmount = useCallback(amount => {
     setBoardState({ ...boardState, flags: boardState.flags + amount});
   }, [boardState]);

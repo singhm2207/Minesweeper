@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import Row from '../Row';
 export const Board = (props) => {
+    //Creates empty board
     const createBoard = props => {
         let board = [];
         for(let i = 0; i < props.rows; i++){
@@ -31,7 +32,7 @@ export const Board = (props) => {
         }
         return board;
     }
-
+    //Updates the flagged status
     const flag = cell => {
         let newRows = [...rowsState];
         cell.hasFlag = !cell.hasFlag;
@@ -39,7 +40,7 @@ export const Board = (props) => {
         setRowsState(newRows);
         props.changeFlagAmount(cell.hasFlag ? -1 : 1);
     };
-
+    //Opens a closed cell.
     const open = cell => {
         let asyncCountMines = new Promise(resolve => {
             let mines = findMines(cell);
@@ -59,6 +60,7 @@ export const Board = (props) => {
                     newRows[cell.y][cell.x].isOpen = true; 
                     newRows[cell.y][cell.x].count = noOfMines;
                     setRowsState(newRows);
+                    //If the current cell doesn't have mine and noOfMines around is 0, open surrounding cells.
                     if (!newRows[cell.y][cell.x].hasMine && noOfMines === 0) {
                         findAroundCell(cell);
                     }
@@ -69,7 +71,7 @@ export const Board = (props) => {
             }
         });
     };
-
+    //Finds surrounding mines.
     const findMines = cell => {
         let minesInProximity = 0;
         for(let row = -1; row <= 1; row++){
@@ -89,12 +91,12 @@ export const Board = (props) => {
                 }
               }
             }
-            return minesInProximity;
+        return minesInProximity;
     }
 
     const findAroundCell = cell => {
         let rows = [...rowsState];
-        // we will loop through each cell and open cells one by one in each row around it until we find one with a mine in it
+        // loop through each cell and open cells one by one in each row around it until we find one with a mine in it
         for (let row = -1; row <= 1; row++) {
           for (let col = -1; col <= 1; col++) {
             if (cell.y + row >= 0 && cell.x + col >= 0) {
